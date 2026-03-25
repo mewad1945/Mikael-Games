@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mewad Games | Portalen</title>
+    <style>
+        :root {
+            --primary: #ff6b11;
+            --dark: #0f0f0f;
+            --card: #1a1a1a;
+            --text: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 50px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #1a1a1a, var(--dark));
+            width: 100%;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary);
+            text-shadow: 0 0 15px rgba(255, 107, 17, 0.4);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 50px 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* SPELKORT */
+        .game-card {
+            background: var(--card);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #333;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(255, 107, 17, 0.2);
+        }
+
+        .game-img {
+            height: 180px;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            border-bottom: 2px solid #333;
+        }
+
+        .game-info {
+            padding: 20px;
+        }
+
+        .game-info h2 {
+            margin: 0 0 10px 0;
+            color: var(--primary);
+        }
+
+        .game-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #bbb;
+            line-height: 1.4;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mewad Games</h1>
+        <p>Välj ett spel och börja grinda!</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- SHAWARMA SIMULATOR KORT -->
+        <a href="https://github.io" class="game-card">
+            <div class="badge">HOT 🔥</div>
+            <div class="game-img">🥙</div>
+            <div class="game-info">
+                <h2>Shawarma Simulator</h2>
+                <p>Bygg ditt kebab-imperium, snurra köttet och nå galaktisk status i detta beroendeframkallande klickerspel.</p>
+            </div>
+        </a>
+
+        <!-- EXEMPEL PÅ NÄSTA SPEL (Du kan kopiera denna när du har fler) -->
+        <div class="game-card" style="opacity: 0.5; cursor: default;">
+            <div class="game-img">🎮</div>
+            <div class="game-info">
+                <h2>Kommer snart...</h2>
+                <p>Håll utkik efter Mewads nästa stora projekt!</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2024 Mewad Development - Skapat för skolan
+    </footer>
+
+</body>
+</html>
