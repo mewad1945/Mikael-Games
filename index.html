@@ -7,14 +7,15 @@
     <style>
         :root {
             --primary: #ff6b11;
-            --dark: #0f0f0f;
-            --card: #1a1a1a;
+            --secondary: #3498db;
+            --dark: #0a0a0a;
+            --card: #161616;
             --text: #ffffff;
         }
 
         body {
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--dark);
             color: var(--text);
             display: flex;
@@ -24,127 +25,157 @@
         }
 
         header {
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
-            background: linear-gradient(to bottom, #1a1a1a, var(--dark));
+            background: linear-gradient(180deg, #1a1a1a 0%, var(--dark) 100%);
             width: 100%;
-            border-bottom: 2px solid var(--primary);
+            border-bottom: 3px solid var(--primary);
         }
 
         h1 {
             margin: 0;
-            font-size: 3rem;
-            letter-spacing: 2px;
+            font-size: 3.5rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--primary);
-            text-shadow: 0 0 15px rgba(255, 107, 17, 0.4);
+            text-shadow: 0 0 20px rgba(255, 107, 17, 0.5);
         }
 
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 50px 20px;
-            max-width: 1200px;
-            width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 60px 20px;
+            max-width: 1100px;
+            width: 90%;
         }
 
-        /* SPELKORT */
+        /* SPELKORT DESIGN */
         .game-card {
             background: var(--card);
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            border: 2px solid #333;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            border: 2px solid #222;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
             color: white;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .game-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px) scale(1.02);
             border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(255, 107, 17, 0.2);
+            box-shadow: 0 15px 40px rgba(255, 107, 17, 0.3);
         }
 
         .game-img {
-            height: 180px;
-            background: #222;
+            height: 200px;
+            background: #1f1f1f;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 80px;
-            border-bottom: 2px solid #333;
+            font-size: 90px;
+            border-bottom: 2px solid #222;
+            transition: 0.3s;
+        }
+
+        .game-card:hover .game-img {
+            background: #252525;
+            font-size: 100px;
         }
 
         .game-info {
-            padding: 20px;
+            padding: 25px;
+            flex-grow: 1;
         }
 
         .game-info h2 {
-            margin: 0 0 10px 0;
+            margin: 0 0 12px 0;
+            font-size: 1.6rem;
             color: var(--primary);
         }
 
         .game-info p {
             margin: 0;
-            font-size: 0.9rem;
-            color: #bbb;
-            line-height: 1.4;
+            font-size: 1rem;
+            color: #aaa;
+            line-height: 1.5;
         }
 
         .badge {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 15px;
             background: var(--primary);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
+            color: black;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 900;
+            z-index: 5;
         }
+
+        .blue-badge { background: var(--secondary); }
 
         footer {
             margin-top: auto;
-            padding: 20px;
-            font-size: 0.8rem;
-            color: #555;
+            padding: 30px;
+            font-size: 0.9rem;
+            color: #444;
+            letter-spacing: 1px;
+        }
+
+        /* MOBIL-ANPASSNING */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .container { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Mewad Games</h1>
-        <p>Välj ett spel och börja grinda!</p>
+        <h1>MEWAD HUB</h1>
+        <p style="color: #666; font-size: 1.1rem;">Mina bästa spel direkt i din webbläsare</p>
     </header>
 
     <div class="container">
         
-        <!-- SHAWARMA SIMULATOR KORT -->
+        <!-- SHAWARMA SIMULATOR -->
         <a href="https://github.io" class="game-card">
-            <div class="badge">HOT 🔥</div>
+            <div class="badge">POPULÄRT 🔥</div>
             <div class="game-img">🥙</div>
             <div class="game-info">
                 <h2>Shawarma Simulator</h2>
-                <p>Bygg ditt kebab-imperium, snurra köttet och nå galaktisk status i detta beroendeframkallande klickerspel.</p>
+                <p>Grinda, snurra kebabrullen och bli Shawarma God! Det största klickerspelet i skolan.</p>
             </div>
         </a>
 
-        <!-- EXEMPEL PÅ NÄSTA SPEL (Du kan kopiera denna när du har fler) -->
-        <div class="game-card" style="opacity: 0.5; cursor: default;">
-            <div class="game-img">🎮</div>
+        <!-- BILSPELET -->
+        <a href="https://mewad1945.github.io/Bilspelet/" class="game-card" style="border-color: #333;">
+            <div class="badge blue-badge">NYTT 🏎️</div>
+            <div class="game-img">🏎️</div>
             <div class="game-info">
-                <h2>Kommer snart...</h2>
-                <p>Håll utkik efter Mewads nästa stora projekt!</p>
+                <h2>Bilspelet</h2>
+                <p>Spänn fast säkerhetsbältet och utmana dina vänner i hög fart. Vem når mållinjen först?</p>
+            </div>
+        </a>
+
+        <!-- PLATS FÖR NÄSTA PROJEKT -->
+        <div class="game-card" style="opacity: 0.4; cursor: default; border-style: dashed;">
+            <div class="game-img">🎲</div>
+            <div class="game-info">
+                <h2>Nästa spel...</h2>
+                <p>Håll ögonen öppna! Mewad jobbar redan på nästa succé.</p>
             </div>
         </div>
 
     </div>
 
     <footer>
-        &copy; 2024 Mewad Development - Skapat för skolan
+        &copy; 2024 MEWAD DEVELOPMENT - POWERED BY GITHUB PAGES
     </footer>
 
 </body>
