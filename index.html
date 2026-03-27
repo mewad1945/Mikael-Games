@@ -11,6 +11,8 @@
             --g: #f1c40f; /* Guld */
             --d: #0a0a0a; /* Bakgrund */
             --c: #161616; /* Kort */
+            --green: #2ecc71; /* Grön för Stocks */
+            --red: #e74c3c; /* Röd för Zombie */
         }
 
         body {
@@ -33,6 +35,7 @@
             text-align: center; padding: 60px 20px; width: 100%;
             border-bottom: 3px solid var(--p); background: rgba(0,0,0,0.7);
             backdrop-filter: blur(10px);
+            box-sizing: border-box;
         }
 
         h1 {
@@ -108,7 +111,6 @@
     </header>
 
     <div class="container">
-        <!-- SHAWARMA SIMULATOR -->
         <a href="https://mewad1945.github.io/Shawarma-Simulator/" class="card">
             <div class="card-img">🥙</div>
             <div class="card-info">
@@ -117,17 +119,31 @@
             </div>
         </a>
 
-        <!-- BILSPELET -->
-        <a href="https://mewad1945.github.io/Bilspelet/" class="card">
+        <a href="https://mewad1945.github.io/Stocks-Spelet/" class="card" style="border-color: var(--green);">
+            <div class="card-img">📈</div>
+            <div class="card-info">
+                <h2 style="color: var(--green);">Stocks Spelet</h2>
+                <p>Daytrada Apple, Tesla och Crypto. Kan du nå 1 miljon och bli nästa Wall Street-legend?</p>
+            </div>
+        </a>
+
+        <a href="https://mewad1945.github.io/Survival/" class="card" style="border-color: var(--red);">
+            <div class="card-img">🧟</div>
+            <div class="card-info">
+                <h2 style="color: var(--red);">Zombie Survival</h2>
+                <p>Apokalypsen är här! Överlev vågor av zombies och försvara din position till varje pris.</p>
+            </div>
+        </a>
+
+        <a href="https://mewad1945.github.io/Bilspelet/" class="card" style="border-color: var(--s);">
             <div class="card-img">🏎️</div>
             <div class="card-info">
-                <h2>Bilspelet</h2>
+                <h2 style="color: var(--s);">Bilspelet</h2>
                 <p>Full gas! Utmana dina reflexer och slå nya rekord i Mewads snabbaste racingspel.</p>
             </div>
         </a>
     </div>
 
-    <!-- CHATT SYSTEM -->
     <div id="chat-section">
         <h3 style="margin-top:0; color: var(--s);">💬 MEWAD GLOBAL CHATT</h3>
         <div id="chat-messages"><b>System:</b> Välkommen tillbaka! Här kan du chatta med andra spelare.</div>
@@ -137,7 +153,6 @@
         </div>
     </div>
 
-    <!-- MODAL FÖR SHOP & LEADERBOARD -->
     <div id="modal-overlay" class="overlay" onclick="closeModal()">
         <div class="modal" onclick="event.stopPropagation()">
             <h2 id="modal-title" style="color:var(--g)">TITEL</h2>
